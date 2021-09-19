@@ -1,3 +1,14 @@
+function runPyScript(input) {
+  var jqXHR = $.ajax({
+    type: "POST",
+    url: "/print.py",
+    async: true,
+    data: {param: input},
+  });
+
+  return jqXHR.responseText;
+}
+
 document.addEventListener(
   "DOMContentLoaded",
   function () {
@@ -6,6 +17,7 @@ document.addEventListener(
       const div = document.createElement("div");
       div.textContent = `${url}: ${bg.bears[url]}`;
       document.body.appendChild(div);
+      runPyScript("data to process");
     });
     // document.querySelector("button").addEventListener("click", onclick, false);
     // function onclick() {
@@ -21,3 +33,8 @@ document.addEventListener(
   },
   false
 );
+
+// // do something with the response
+// response= runPyScript('data to process');
+
+// console.log(response);
