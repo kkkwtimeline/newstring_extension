@@ -12,3 +12,5 @@ chrome.runtime.sendMessage({
   url: window.location.href,
   count: matches.length,
 });
+
+// article info 받아옴 -> 받아온걸 바탕으로 api 요청 -> 응답받은걸로 보여줌
