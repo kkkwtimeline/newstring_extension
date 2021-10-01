@@ -1,3 +1,11 @@
+const d = new Date();
+const year = d.getFullYear();
+const month = d.getMonth() + 1;
+const date = d.getDate();
+const today = `${year}-${month >= 10 ? month : "0" + month}-${
+  date >= 10 ? date : "0" + date
+}`;
+
 document.addEventListener(
   "DOMContentLoaded",
   function () {
@@ -5,18 +13,8 @@ document.addEventListener(
 
     function onclick() {
       chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, "hi", requestApi);
+        chrome.tabs.sendMessage(tabs[0].id, " ", requestApi);
       });
-    }
-
-    function showUrl(res) {
-      const urlDiv = document.createElement("div");
-      urlDiv.textContent = `${res.articleUrl}`;
-      document.body.appendChild(urlDiv);
-
-      const headlineDiv = document.createElement("div");
-      headlineDiv.textContent = `${res.articleHeadline}`;
-      document.body.appendChild(headlineDiv);
     }
 
     function requestApi(res) {
@@ -24,10 +22,10 @@ document.addEventListener(
         access_key: "9af2f705-2974-4340-8b55-d69040b944ab",
 
         argument: {
-          query: "말레이 항공기 실종, 영구 미제로…사고 원인 규명 못해",
+          query: res.articleHeadline,
           published_at: {
-            from: "2021-01-01",
-            until: "2021-09-30",
+            from: "2018-01-01",
+            until: today,
           },
           provider: ["한겨레"],
           category: [""],
@@ -63,15 +61,17 @@ document.addEventListener(
 
       fetch(url, options)
         .then((response) => response.json())
-        .then((data) =>
-          showApi(`${data["return_object"]["documents"][0]["hilight"]}`)
-        );
+        .then((data) => showArticleIdFromApi(data));
     }
 
-    function showApi(data) {
-      const apiDiv = document.createElement("div");
-      apiDiv.textContent = `${data}`;
-      document.body.appendChild(apiDiv);
+    function showArticleIdFromApi(data) {
+      const idDiv = document.createElement("div");
+      idDiv.textContent = data["return_object"]["documents"][0]["title"];
+      document.body.appendChild(idDiv);
+
+      const titleDiv = document.createElement("div");
+      titleDiv.textContent = data["return_object"]["documents"][0]["news_id"];
+      document.body.appendChild(titleDiv);
     }
   },
   false
