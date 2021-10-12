@@ -1,0 +1,233 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="header" style="margin-left:10px;margin-right:10px;">
+        <div class="header header_common" style=margin-left:auto></div>
+        <div class="header header_common" >
+            <a href="https://newsstring.run.goorm.io/" target=_blank>
+                <!-- <img src="./image/newstring_logo.png" alt="My Image" width="130" height="50" style="margin-top:4px;"> -->
+                <img src="./image/newstring_logo_3.png" alt="My Image" width="50" height="50" style="margin-top:2px;margin-bottom:4px;">
+            <!-- <h1 style="margin-top:40px;">NewString</h1> -->
+            </a>
+        </div>
+        <div class="header header_common" style=margin-right:auto;>
+            <!-- <input type="button" value="구독" id="extraction" style=position:relative;top:40px;> -->
+        </div>
+    </div>
+
+    <div class="issue" id="subscribe_start" >
+        <div style="text-align:left">
+            <h1 style="margin-left: 10px;">로딩중</h1>
+        </div>
+        <div style="display: flex;position:relative;bottom:20px;margin-left: 20px;">
+            <h6> </h6>
+        </div>
+    </div>
+
+    <div class="issue" id="subscribe_name" style="display:none;">
+        <div style="text-align:left">
+            <h1 style="margin-left: 10px;" id="subscribe_title">넷플릭스 오징어게임</h1>
+            <button type="button" class="button hover3" id="unsubscribe" style="position:relative;bottom:44px;right:15px;float:right;font-size:1px;display:none;" value="구독">구독중</button>
+            <button type="button" id="subscribe" class="button hover3" style="position:relative;bottom:44px;right:15px;float:right;font-size:1px;" value="구독">구독</button>
+            <button type="button" class="button hover3" id="view_check_b" style="position:relative;bottom:44px;right:15px;float:right;font-size:1px;display:none;display:none;" value="구독취소">✔</button>
+        </div>
+        <div style="display: flex;position:relative;bottom:20px;margin-left: 20px;">
+            <h6 id="subscribe_people">구독자 : 4,560 명</h6>
+        </div>
+        <div style="display: flex;position:relative;bottom:20px;">
+            <button class="detail_button" id="open_detail">관련 이슈 보기</button>
+            <button class="detail_button" style="display:none;" id="close_detail">관련 이슈 닫기</button>
+        </div>
+        
+    </div>
+    
+    <div class="detail" style="margin-left:10px;margin-right:10px;display: none;" id="detail_page"><!--맨처음 페이지에서만 사용-->
+        <div class="detail_timeline">
+            <button class="detail_choice_button" id="open_detail_1" value="구독자 : 2,351 명">넷플릭스</button>
+            <button class="detail_choice_button" id="open_detail_2" value="구독자 : 981 명">오징어게임 저작권</button>
+        </div>
+        <div class="detail_timeline">
+            <button class="detail_choice_button" id="open_detail_3" value="구독자 : 3,168 명">오징어게임 장난전화</button>
+            <button class="detail_choice_button" id="open_detail_4" value="구독자 : 681 명">드라마</button>
+        </div>
+        <div class="detail_timeline">
+            
+        </div>
+        <div style="margin-top:10px;"></div>
+    </div>
+
+    <div class="naver_article" style="margin-left:10px;margin-right:10px;" id="page_1_item_01"><!--맨처음 페이지에서만 사용-->
+        <div id="test_show" class="naver_article naver_article_common" style="text-align:left">
+            <h2 style="color:blue">현재기사</h3>
+        </div>
+        <div class="naver_article naver_article_common"></div>
+        <div class="naver_article naver_article_common">
+            <!-- <button type="button" id="subscribe" class="button hover3" style=position:relative;top:10px;left:30px;font-size:1px; value="구독">구독</button>
+            <button type="button" class="button hover3" id="view_check_b" style=position:relative;top:10px;left:30px;font-size:1px;display:none; value="구독취소">✔</button> -->
+        </div>
+    </div>
+
+    <div class="article_title" style="margin-left:10px;margin-right:10px;margin-top:20px;" id="page_1_item_02"><!--맨처음 페이지에서만 사용-->
+        <div>
+            <span id="title" class="title_text"></span>
+        </div>
+        <textarea id="url">기사를 보는 웹</textarea>
+        <textarea id="contents">기사 내용</textarea>
+        <textarea id="time">기사 작성시간</textarea>
+        
+    </div> 
+
+    <div style="height: 10px;"></div>   
+
+    <div id="similar_items_div" style="display:none;">
+        <h2>유사기사</h2>
+        <div>
+            
+            <div class="items" id="s_items">
+                <a href="https://news.kbs.co.kr/news/view.do?ncd=5294749&ref=A" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/global.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>인도서도 ‘오징어게임 돌풍’… 전 세계 1위</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="items" id="s_items">
+                <a href="http://news.heraldcorp.com/view.php?ud=20211006000682" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/obs.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>오징어게임, 인도서도 1위…6일 美 NBC 토크쇼 출연</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="items" id="s_items">
+                <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1006488041" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/hani.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>오징어 게임, 넷플릭스 세계 제패</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="items" id="s_items">
+                <a href="http://news.kmib.co.kr/article/view.asp?arcid=0016335943&code=61131811" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/hankyung.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>'오징어 게임' 벌써 전세계 8200만명 봤다…10일 연속 1위</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div>
+            <button class="success" type="button" id="open_web_similar">웹에서 보기</button>
+        </div>
+    </div>
+
+    <div id="time_lines_div" style="display:none;">
+        <h2>타임라인</h2>
+        <div>
+            <div class="items" id="t_items">
+                <a href="https://www.seoul.co.kr/news/newsView.php?id=20211003500022&wlog_tag3=naver" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/seoul.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>오징어 게임, 결국 인도 '발리우드' 뚫었다... 전세계 1위</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="items" id="t_items">
+                <a href="https://www.chosun.com/culture-life/2021/09/21/63DBQ3ZIOBBEXDNZDW6EPSCOEI/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/fnnews.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>한국 드라마 '오징어 게임' 넷플릭스서 첫 세계 2위"</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="items" id="t_items">
+                <a href="https://www.sedaily.com/NewsView/22RESF0EC8" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/se.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>D-7 넷플릭스 '오징어 게임' 관전 포인트 공개</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="items" id="t_items">
+                <a href="https://www.sedaily.com/NewsView/1Z05OZIXZ9" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/se.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>[공식] '넷플릭스' 오징어 게임, 이정재 박해수 캐스팅 확정</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="items" id="t_items">
+                <a href="https://star.ytn.co.kr/_sn/0117_201911141111342145" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/ytn.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>이정재 측... "넷플릭스 오징어게임, 제안 받고 검토중"(공식입장)</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="items" id="t_items">
+                <a href="https://star.ytn.co.kr/_sn/0117_201909021112038420" target=_blank><!--similar_item 시작-->
+                    <div class="show_item_top" >
+                        <img src="./image/logo/ytn.png" style="border-radius:10px;float:left;height:80%;width:15%;">
+                    </div>
+                    <div class="show_item_bottom">
+                        <h3>'남한산성' 황동혁 감독, 넷플릭스 손잡고 '오징어 게임' 제작</h3>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div>
+            <button class="success" type="button" id="open_web_time_line">웹에서 보기</button>
+        </div>
+        
+    </div>
+
+    <div class='footer' id="footer_btn_div" style="display:none;">
+        <div class="footer footer_common" style=margin-right:auto>
+        <!-- <input type="button" value="타임라인" id="time_line"> -->
+            <button type="button" id="time_line" class="button hover3">타임라인</button>
+        </div>
+
+        <div class="footer footer_common" style=margin-left:auto>
+            <button type="button" id="similar_articles" class="button hover3">유사기사</button>
+        </div>
+    </div>
+
+    
+
+    <script src="popup2.js"></script>
+</body>
+</html>
